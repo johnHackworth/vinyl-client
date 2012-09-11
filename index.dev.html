@@ -9,8 +9,22 @@
         {jquery: "./vendors/jquery/jquery.js"},
         {underscore: "./vendors/underscore/underscore.js"},
         {backbone: "./vendors/backbone/backbone.js"},
-        {seed: "./vendors/seedjs/bin/seed.js"}
-    )
+        {seed: "./vendors/seedjs/bin/seed.js"},
+        {handlebars: "./vendors/handlebars/lib/handlebars.js"},
+        {config: "./src/config.js"},
+        // models
+        {"user.model": "./src/user/model/user.model.js"}
+        // controllers
+    );
+
+    head.ready(function() {
+        $('body').append('holamundo');
+        // Backbone.emulateJSON = true;
+        window.u = new dusty.model.User({
+            login: "jjhhhhj",
+            password: "jsdgalskgja  "
+        })
+    });
 </script>
 </body>
 </html>
