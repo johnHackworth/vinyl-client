@@ -1,4 +1,4 @@
-dusty.model.User = SeedModel.extend({
+dusty.models.User = dusty.model.extend({
     defaults: {
         login: null,
         name: null,
@@ -14,7 +14,7 @@ dusty.model.User = SeedModel.extend({
     },
 });
 
-test =  dusty.model.User.extend({
+test =  dusty.models.User.extend({
     save: function() {
         var method = 'PUT';
         if(this.isNew()) method = 'POST'

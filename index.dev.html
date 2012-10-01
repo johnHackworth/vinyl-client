@@ -12,18 +12,22 @@
         {seed: "./vendors/seedjs/bin/seed.js"},
         {handlebars: "./vendors/handlebars/lib/handlebars.js"},
         {config: "./src/config.js"},
+        {"dusty.controller": "./src/common/controller/dusty.controller.js"},
+        {"dusty.model": "./src/common/model/dusty.model.js"},
         // models
-        {"user.model": "./src/user/model/user.model.js"}
+        {"user.model": "./src/user/model/user.model.js"},
+        {"album.model": "./src/album/model/album.model.js"},
+        {"album.collection": "./src/album/model/albums.collection.js"},
+        {"album.list.controller": "./src/album/controller/albumList.controller.js"}
         // controllers
     );
 
     head.ready(function() {
         $('body').append('holamundo');
         // Backbone.emulateJSON = true;
-        window.u = new dusty.model.User({
-            login: "jjhhhhj",
-            password: "jsdgalskgja  "
-        })
+        a = new dusty.collections.LastFmCol({username: 'redpandaredpan'})
+        a.fetch();
+        b = new dusty.controllers.LastFmList({el: $('body'), model: a})
     });
 </script>
 </body>
