@@ -18,16 +18,18 @@
         {"user.model": "./src/user/model/user.model.js"},
         {"album.model": "./src/album/model/album.model.js"},
         {"album.collection": "./src/album/model/albums.collection.js"},
-        {"album.list.controller": "./src/album/controller/albumList.controller.js"}
         // controllers
+        {"album.list.controller": "./src/album/controller/albumList.controller.js"},
+        // routers
+        {"router": "./src/routers.js"}
     );
 
     head.ready(function() {
-        $('body').append('holamundo');
+        console.log('aaa')
+        window.routes = new dusty.router();
+        Backbone.history.start()
         // Backbone.emulateJSON = true;
-        a = new dusty.collections.LastFmCol({username: 'redpandaredpan'})
-        a.fetch();
-        b = new dusty.controllers.LastFmList({el: $('body'), model: a})
+
     });
 </script>
 </body>

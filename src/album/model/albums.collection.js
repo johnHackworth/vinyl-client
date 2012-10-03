@@ -3,6 +3,9 @@ dusty.collections.Albums = dusty.collection.extend({
 })
 
 dusty.collections.LastFmCol = dusty.collections.Albums.extend({
+    maxPrice: 100000,
+    excludeSingles: 'False',
+    currency: null,
     url: function() {
         return dusty.url('lastFmUserCol', this.username) + this.getParams();
     },
@@ -11,7 +14,11 @@ dusty.collections.LastFmCol = dusty.collections.Albums.extend({
         this.bind('updated', this.fetch);
     },
     getFormattedData: function() {
-        return {'albums': this.toJSON()};
+        return { 'albums': this.toJSON(),
+            currency: this.currency,
+            maxPrice: this.maxPrice,
+            excludeSingles: this.excludeSingles
+        };
     },
     getParams: function() {
         var params = [];
