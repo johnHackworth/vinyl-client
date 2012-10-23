@@ -5,8 +5,8 @@ dusty.controllers = {};
 
 dusty.config = {
     server: {
-        // url: 'http://localhost:8001/'
-        url: 'http://listify.es:8080/',
+        url: 'http://localhost:8000/'
+        // url: 'http://listify.es:8080/',
     },
     client: {
         url: 'src/'

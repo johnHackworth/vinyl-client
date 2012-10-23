@@ -20,7 +20,7 @@ dusty.models.User = dusty.model.extend({
     ],
 
     url: function() {
-        return dusty.restUrls['user'];
+        return dusty.url('user');
     },
 
     urlSession: function() {

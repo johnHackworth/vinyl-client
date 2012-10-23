@@ -1,6 +1,12 @@
 dusty.model = SeedModel.extend({
+    initialize: function() {
+        _.bindAll(this, 'getFormattedData', 'triggerError');
+    },
     getFormattedData: function() {
         return this.toJSON();
+    },
+    triggerError: function() {
+        this.trigger('error');
     }
 })
 

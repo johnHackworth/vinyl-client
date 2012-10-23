@@ -3,6 +3,7 @@ dusty.router = Backbone.Router.extend({
   routes: {
     "!/lastfm/:user": "showRecordList",
     "!/user/new": "createUser",
+    '!/session/login': "loginUser"
   },
 
   showRecordList: function(user) {
@@ -14,5 +15,10 @@ dusty.router = Backbone.Router.extend({
     window.user = new dusty.models.User();
     window.userForm = new dusty.controllers.User({el: $('body'), model: window.user});
     userForm.render();
+  },
+  loginUser: function() {
+    window.session = new dusty.models.Session();
+    window.sessionView = new dusty.controllers.Session({el: $('body'), model: window.session});
+    sessionView.render();
   }
 });
