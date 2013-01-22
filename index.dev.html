@@ -11,19 +11,29 @@
         {backbone: "./vendors/backbone/backbone.js"},
         {seed: "./vendors/seedjs/bin/seed.js"},
         {handlebars: "./vendors/handlebars/lib/handlebars.js"},
+        {jqueryCookie: "./vendors/jquery-cookie/jquery.cookie.js"},
         {config: "./src/config.js"},
+        {"dusty.controller": "./src/common/controller/dusty.controller.js"},
+        {"dusty.model": "./src/common/model/dusty.model.js"},
         // models
-        {"user.model": "./src/user/model/user.model.js"}
+        {"user.model": "./src/user/model/user.model.js"},
+        {"session.model": "./src/user/model/session.model.js"},
+        {"album.model": "./src/album/model/album.model.js"},
+        {"album.collection": "./src/album/model/albums.collection.js"},
         // controllers
+        {"album.list.controller": "./src/album/controller/albumList.controller.js"},
+        {"user.controller": "./src/user/controller/user.controller.js"},
+        {"session.controller": "./src/user/controller/session.controller.js"},
+        // routers
+        {"router": "./src/routers.js"}
     );
 
     head.ready(function() {
-        $('body').append('holamundo');
+        console.log('aaa')
+        window.routes = new dusty.router();
+        Backbone.history.start()
         // Backbone.emulateJSON = true;
-        window.u = new dusty.model.User({
-            login: "jjhhhhj",
-            password: "jsdgalskgja  "
-        })
+
     });
 </script>
 </body>

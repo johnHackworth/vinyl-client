@@ -7,6 +7,7 @@ install:
 	git clone git@github.com:johnHackworth/SeedJs.git ./vendors/seedjs
 	git clone https://github.com/headjs/headjs.git ./vendors/headjs
 	git clone https://github.com/wycats/handlebars.js.git ./vendors/handlebars
+	git clone https://github.com/carhartl/jquery-cookie.git
 
 minimize:
 	./manage.py runserver 0.0.0.0:8000
